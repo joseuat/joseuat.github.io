@@ -5,7 +5,7 @@
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <body style="margin : 0px; overflow: hidden;">
         <a-scene embedded arjs>
-        <a-marker preset="kanji">
+        <a-marker preset="hiro">
             <!-- we use cors proxy to avoid cross-origin problems ATTENTION! you need to set up your server -->
             <a-entity
             position="0 0 0"
@@ -14,19 +14,63 @@
             gltf-model="https://joseuat.github.io/ar/skull/model/scene.gltf"
             ></a-entity>
         </a-marker>
-        <a-marker preset="hiro">
+        <a-marker
+
+            id="animated-marker"
+                type="pattern"
+                preset="custom"
+                url="https://joseuat.github.io/ar/skull/assets/pattern-kanji.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerA" >
             <!-- we use cors proxy to avoid cross-origin problems ATTENTION! you need to set up your server -->
             <a-entity
             position="0 0 0"
-            scale="0.95 0.95 0.95"
+            scale="0.1 0.1 0.1"
             rotation="-70 0 0"
-            gltf-model="https://joseuat.github.io/ar/skull/pikachu/poke.gltf"
-            animation-mixer="loop: repeat"
-                    gltf-model="#animated-asset"
-                    class="clickable"
-                    gesture-handler
+            gltf-model="https://joseuat.github.io/ar/skull/model/corazon.glb"
             ></a-entity>
         </a-marker>
+
+        <a-marker
+
+            id="animated-marker2"
+                type="pattern"
+                preset="custom"
+                url="https://joseuat.github.io/ar/skull/assets/pattern-letterD.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerD" >
+            <!-- we use cors proxy to avoid cross-origin problems ATTENTION! you need to set up your server -->
+            <a-entity
+            position="0 0 0"
+            scale="0.991 0.991 0.991"
+            rotation="-70 0 0"
+            gltf-model="https://joseuat.github.io/ar/skull/model/cerebro.gltf"
+            ></a-entity>
+        </a-marker>
+
+        <a-marker
+
+            id="animated-marker3"
+                type="pattern"
+                preset="custom"
+                url="https://joseuat.github.io/ar/skull/assets/pattern-letterF.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerD3" >
+            <!-- we use cors proxy to avoid cross-origin problems ATTENTION! you need to set up your server -->
+            <a-entity
+            position="0 0 0"
+            scale="0.003 0.003 0.003"
+            rotation="-70 0 0"
+            gltf-model="https://joseuat.github.io/ar/skull/model/abdomen.gltf"
+            ></a-entity>
+        </a-marker>
+        
         <a-entity camera></a-entity>
         </a-scene>
     </body>
